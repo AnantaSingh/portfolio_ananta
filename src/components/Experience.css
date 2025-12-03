@@ -1,0 +1,110 @@
+.experience-section {
+  padding-top: 100px;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.experience-card {
+  background: var(--background-light);
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.position-info {
+  text-align: right;
+}
+
+.position {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.achievements {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.achievements li {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.achievements li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .position-info {
+    text-align: left;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+}
+
