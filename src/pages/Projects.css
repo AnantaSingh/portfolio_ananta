@@ -1,6 +1,6 @@
 .projects-page {
   min-height: 100vh;
-  padding: 100px 20px 60px;
+  padding: 40px 20px 60px;
 }
 
 .projects-container {
@@ -30,6 +30,17 @@
   background: var(--accent);
 }
 
+.project-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -49,7 +60,7 @@
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-header {
@@ -96,12 +107,19 @@
 }
 
 .tech-tag {
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   color: var(--accent);
   padding: 0.3rem 0.8rem;
   border-radius: 4px;
   font-size: 0.85rem;
-  border: 1px solid rgba(100, 255, 218, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.empty-category {
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 2rem;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

@@ -14,7 +14,6 @@ const Resume = () => {
   return (
     <div className="resume-page">
       <div className="resume-container">
-        <h1 className="page-title">Resume</h1>
         <div className="resume-actions">
           <button onClick={handleDownload} className="download-btn">
             <FaDownload />
