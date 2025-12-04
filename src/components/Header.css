@@ -29,6 +29,7 @@
   color: var(--accent);
   cursor: pointer;
   transition: transform 0.3s ease;
+  text-decoration: none;
 }
 
 .logo:hover {
@@ -49,6 +50,7 @@
   transition: color 0.3s ease;
   position: relative;
   padding: 0.5rem 0;
+  display: block;
 }
 
 .nav-list a:hover,

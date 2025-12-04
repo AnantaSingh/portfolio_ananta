@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import './Header.css'
 
-const Header = ({ activeSection }) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,43 +16,40 @@ const Header = ({ activeSection }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [location])
+
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' },
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/resume', label: 'Resume' },
   ]
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMenuOpen(false)
+  const isActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/'
     }
+    return location.pathname.startsWith(path)
   }
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo" onClick={() => scrollToSection('home')}>
+        <Link to="/" className="logo">
           AS
-        </div>
+        </Link>
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
           <ul className="nav-list">
             {navItems.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className={activeSection === item.id ? 'active' : ''}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.id)
-                  }}
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={isActive(item.path) ? 'active' : ''}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -68,4 +67,3 @@ const Header = ({ activeSection }) => {
 }
 
 export default Header
-

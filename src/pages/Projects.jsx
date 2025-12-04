@@ -27,46 +27,48 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="projects-section">
-      <h2 className="section-title">Projects</h2>
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <div className="project-header">
-              <h3 className="project-title">{project.title}</h3>
-              <div className="project-links">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                  >
-                    <FaGithub />
-                  </a>
-                )}
-                {project.external && (
-                  <a
-                    href={project.external}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="External Link"
-                  >
-                    <FaExternalLinkAlt />
-                  </a>
-                )}
+    <div className="projects-page">
+      <div className="projects-container">
+        <h1 className="page-title">Projects</h1>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div key={index} className="project-card">
+              <div className="project-header">
+                <h3 className="project-title">{project.title}</h3>
+                <div className="project-links">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                    >
+                      <FaGithub />
+                    </a>
+                  )}
+                  {project.external && (
+                    <a
+                      href={project.external}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="External Link"
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
+                  )}
+                </div>
+              </div>
+              <p className="project-description">{project.description}</p>
+              <div className="project-technologies">
+                {project.technologies.map((tech, idx) => (
+                  <span key={idx} className="tech-tag">{tech}</span>
+                ))}
               </div>
             </div>
-            <p className="project-description">{project.description}</p>
-            <div className="project-technologies">
-              {project.technologies.map((tech, idx) => (
-                <span key={idx} className="tech-tag">{tech}</span>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 
