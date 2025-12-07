@@ -1,7 +1,11 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { useState } from 'react'
+import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from 'react-icons/fa'
+import ProjectDetails from '../components/ProjectDetails'
 import './Projects.css'
 
 const Projects = () => {
+  const [showDetails, setShowDetails] = useState(null)
+
   const projectCategories = [
     {
       category: 'Machine Learning',
@@ -44,7 +48,16 @@ const Projects = () => {
     },
     {
       category: 'Backend',
-      projects: []
+      projects: [
+        {
+          title: 'Social Network Application',
+          description: 'A full-stack social network application demonstrating graph database capabilities with Neo4j. The application features user registration, profile management, and relationship tracking through follow/unfollow functionality. It leverages graph traversal algorithms to provide friend recommendations based on mutual connections, search capabilities, and popular user analytics. Built with a modern Streamlit web interface and a command-line interface using Rich, the project showcases efficient graph querying, relationship modeling, and real-time data visualization.',
+          technologies: ['Python', 'Neo4j', 'Graph Databases', 'Cypher Query Language', 'Streamlit', 'Docker', 'RESTful API Design', 'Data Modeling', 'Graph Algorithms', 'Database Design', 'User Authentication', 'Session Management', 'Environment Variables', 'pandas', 'Rich CLI Framework', 'NoSQL Databases', 'Relationship Mapping', 'Graph Traversal', 'Friend Recommendation Systems', 'Social Network Analysis'],
+          github: 'https://github.com/AnantaSingh',
+          external: null,
+          demo: '/social-network-demo.mov'
+        }
+      ]
     }
   ]
 
@@ -59,37 +72,57 @@ const Projects = () => {
               <div className="projects-grid">
                 {category.projects.map((project, index) => (
                   <div key={index} className="project-card">
-                    <div className="project-header">
-                      <h3 className="project-title">{project.title}</h3>
-                      <div className="project-links">
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub"
-                          >
-                            <FaGithub />
-                          </a>
-                        )}
-                        {project.external && (
-                          <a
-                            href={project.external}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="External Link"
-                          >
-                            <FaExternalLinkAlt />
-                          </a>
-                        )}
+                    <h3 className="project-title">{project.title}</h3>
+                    {!project.demo && (
+                      <p className="project-subtitle">Click Details to learn more</p>
+                    )}
+                    <div className="project-links">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="GitHub"
+                          className="project-link"
+                        >
+                          <FaGithub />
+                          <span>GitHub</span>
+                        </a>
+                      )}
+                      {project.external && (
+                        <a
+                          href={project.external}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="External Link"
+                          className="project-link"
+                        >
+                          <FaExternalLinkAlt />
+                          <span>External</span>
+                        </a>
+                      )}
+                      <button
+                        onClick={() => setShowDetails(project)}
+                        className="details-button"
+                        aria-label="View Details"
+                        title="View Project Details"
+                      >
+                        <FaInfoCircle />
+                        <span className="details-button-text">Details</span>
+                      </button>
+                    </div>
+                    {project.demo && (
+                      <div className="project-video-container">
+                        <video
+                          src={project.demo}
+                          controls
+                          className="project-video"
+                          preload="metadata"
+                        >
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
-                    </div>
-                    <p className="project-description">{project.description}</p>
-                    <div className="project-technologies">
-                      {project.technologies.map((tech, idx) => (
-                        <span key={idx} className="tech-tag">{tech}</span>
-                      ))}
-                    </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -99,6 +132,12 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      {showDetails && (
+        <ProjectDetails
+          project={showDetails}
+          onClose={() => setShowDetails(null)}
+        />
+      )}
     </div>
   )
 }
