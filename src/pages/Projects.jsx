@@ -14,34 +14,21 @@ const Projects = () => {
           title: 'Deepfake Attack on Face Recognition',
           description: 'Developed a facial recognition system using FaceNet and trained classifiers (SVM, MLP, Random Forest) on an augmented PubFig dataset (~10k images). Evaluated system vulnerability to deepfakes generated via InsightFace and SimSwap, revealing a significant misidentification rate difference (0.03 vs. 0.49).',
           technologies: ['Python', 'FaceNet', 'scikit-learn', 'SVM', 'Random Forest', 'MLP', 'PCA', 'MTCNN', 'SimSwap', 'InsightFace', 'imgaug', 'GridSearchCV'],
-          github: 'https://github.com/AnantaSingh',
+          github: 'https://github.com/AnantaSingh/BiometricAI',
           external: null
         },
         {
           title: 'Smart Device Analyzer',
           description: 'Created a system that uses machine learning to interpret device behavior patterns, categorizing states as Normal, Fatigued, Stressed, or Critical, making technical data intuitive for non-technical users.',
           technologies: ['Python', 'Flask', 'IsolationForest', 'Sentiment Analysis', 'NumPy', 'scikit-learn', 'Vercel'],
-          github: 'https://github.com/AnantaSingh',
+          github: 'https://github.com/AnantaSingh/smart-device-analyzer',
           external: null
-        }
-      ]
-    },
-    {
-      category: 'Data Engineering',
-      projects: []
-    },
-    {
-      category: 'Gen AI',
-      projects: []
-    },
-    {
-      category: 'Frontend',
-      projects: [
+        },
         {
-          title: 'AI Learning Hub',
-          description: 'Developed a platform for AI resources featuring an advanced search engine with intelligent filtering, GitHub API integration for trending repositories, and personalized bookmarking.',
-          technologies: ['Python', 'Django', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript', 'Render', 'Git'],
-          github: 'https://github.com/AnantaSingh',
+          title: 'Sleeper Agents',
+          description: 'Replicated Anthropic\'s Sleeper Agents study by fine-tuning DeepSeek-Coder-1.3B with LoRA and achieved 100% differentiation responses, validating sleeper-agent behavior in small LLMs.',
+          technologies: ['Python', 'PyTorch', 'Hugging Face Transformers', 'LoRA (PEFT)', 'TPU v5e', 'Prompt Engineering', 'DeepSeek-Coder'],
+          github: 'https://github.com/AnantaSingh/SleeperAgents',
           external: null
         }
       ]
@@ -56,6 +43,39 @@ const Projects = () => {
           github: 'https://github.com/AnantaSingh',
           external: null,
           demo: '/social-network-demo.mov'
+        }
+      ]
+    },
+    {
+      category: 'Gen AI',
+      projects: []
+    },
+    {
+      category: 'Frontend',
+      projects: [
+        {
+          title: 'AI Learning Hub',
+          description: 'Developed a platform for AI resources featuring an advanced search engine with intelligent filtering, GitHub API integration for trending repositories, and personalized bookmarking.',
+          technologies: ['Python', 'Django', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript', 'Render', 'Git'],
+          github: 'https://github.com/AnantaSingh/AILearningHub',
+          external: null
+        }
+      ]
+    },
+    {
+      category: 'Data Engineering',
+      projects: []
+    },
+    {
+      category: 'Networking',
+      projects: [
+        {
+          title: 'Wireless Network Handover Optimization',
+          description: 'I built a wireless network emulation project using Mininet-WiFi to analyze how mobile stations perform handovers between multiple Access Points under different network conditions. The project implements SSF (Strongest Signal First) and an advanced MCDM-based handover algorithm that combines RSSI, delay, and AP congestion using Entropy weighting and TOPSIS. In scenarios with 4 APs, where AP2 was 2.5× more congested, SSF incorrectly selected AP2 due to its stronger signal, while the MCDM model correctly preferred AP4, achieving fewer handovers, lower latency, and behavior consistent with findings from Mahardhika (2012). The system includes mobility modeling, path-loss RSSI estimation, hysteresis, and detailed handover delay logging. This project demonstrates how algorithmic decision-making can significantly improve Wi-Fi roaming quality in multi-AP environments.',
+          technologies: ['Mininet', 'Mininet-WiFi', 'network emulation', 'wireless networking', 'Wi-Fi 802.11', 'access points', 'RSSI modeling', 'mobility simulation', 'handover algorithms', 'SSF', 'MCDM', 'entropy weighting', 'TOPSIS algorithm', 'Python programming', 'algorithm design', 'Linux networking', 'network namespaces', 'iw/ifconfig tools', 'wireless MAC behavior', 'log-distance path-loss model', 'latency measurement', 'handover delay analysis', 'data visualization', 'Matplotlib', 'virtualization', 'UTM', 'Ubuntu Linux', 'experiment design', 'performance analysis', 'Git', 'GitHub'],
+          github: 'https://github.com/AnantaSingh/mininet-wifi-handover',
+          external: null,
+          demo: '/wireless-network-demo.mov'
         }
       ]
     }

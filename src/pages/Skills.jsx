@@ -23,8 +23,8 @@ const Skills = () => {
       skills: ['AWS', 'Azure', 'Azure Data Explorer', 'Azure Databricks', 'Azure OpenAI', 'Azure AI Search', 'Quickbase', 'SAP']
     },
     {
-      category: 'ML Libraries & Models',
-      skills: ['FaceNet', 'scikit-learn', 'SVM', 'Random Forest', 'MLP', 'PCA', 'MTCNN', 'SimSwap', 'InsightFace', 'imgaug', 'GridSearchCV', 'IsolationForest', 'Sentiment Analysis']
+      category: 'Machine Learning',
+      skills: ['FaceNet', 'scikit-learn', 'SVM', 'Random Forest', 'MLP', 'PCA', 'MTCNN', 'imgaug', 'GridSearchCV', 'IsolationForest', 'Sentiment Analysis', 'Hugging Face Transformers', 'LoRA (PEFT)', 'TPU v5e', 'Prompt Engineering', 'DeepSeek-Coder']
     },
     {
       category: 'Miscellaneous',
