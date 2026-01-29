@@ -5,7 +5,7 @@ const Resume = () => {
   const handleDownload = () => {
     const link = document.createElement('a')
     link.href = '/resume.pdf'
-    link.download = 'AnantaSingh_Resume.pdf'
+    link.download = 'NewGrad_AnantaSingh_JP_Resume2026.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)

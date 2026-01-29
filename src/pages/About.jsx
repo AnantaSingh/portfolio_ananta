@@ -4,7 +4,7 @@ const About = () => {
   const companies = [
     {
       name: 'Volvo Group North America',
-      position: 'Software Engineer',
+      position: 'Software Engineer Intern',
       period: 'May 2025 - Present',
     },
     {
