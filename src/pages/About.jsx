@@ -9,7 +9,7 @@ const About = () => {
     },
     {
       name: 'Microsoft',
-      position: 'Software Engineer 2',
+      position: 'Software Engineer',
       period: 'Jul 2019 - Jul 2024',
     }
   ]
